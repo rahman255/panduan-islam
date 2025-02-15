@@ -1,0 +1,93 @@
+<!-- Dashboard Doa Pendek - HTML, CSS, dan JavaScript -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Doa Pendek</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      padding: 20px;
+    }
+    .title {
+      text-align: center;
+      font-size: 32px;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+    .search-bar {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .search-input {
+      padding: 10px;
+      width: 300px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+    }
+    .doa-card {
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+    .doa-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #16a085;
+    }
+    .doa-arabic {
+      font-size: 18px;
+      text-align: right;
+      font-family: 'Traditional Arabic', serif;
+      color: #2c3e50;
+    }
+    .doa-translation {
+      font-size: 14px;
+      color: #7f8c8d;
+    }
+  </style>
+  <script>
+    function searchDoa() {
+      const searchValue = document.getElementById('search').value.toLowerCase();
+      const cards = document.querySelectorAll('.doa-card');
+      
+      cards.forEach(card => {
+        const title = card.querySelector('.doa-title').innerText.toLowerCase();
+        if (title.includes(searchValue)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</head>
+<body>
+  <h1 class="title">Dashboard Doa Pendek</h1>
+  <div class="search-bar">
+    <input type="text" id="search" class="search-input" placeholder="Cari doa..." onkeyup="searchDoa()">
+  </div>
+
+  <div class="doa-card">
+    <h2 class="doa-title">Doa Sebelum Tidur</h2>
+    <p class="doa-arabic">بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا</p>
+    <p class="doa-translation">Dengan nama-Mu, ya Allah, aku hidup dan aku mati.</p>
+  </div>
+
+  <div class="doa-card">
+    <h2 class="doa-title">Doa Bangun Tidur</h2>
+    <p class="doa-arabic">الحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا</p>
+    <p class="doa-translation">Segala puji bagi Allah yang telah menghidupkan kami setelah mematikan kami.</p>
+  </div>
+
+  <div class="doa-card">
+    <h2 class="doa-title">Doa Sebelum Makan</h2>
+    <p class="doa-arabic">اللَّهُمَّ بَارِكْ لَنَا فِيْمَا رَزَقْتَنَا وَقِنَا عَذَابَ النَّارِ</p>
+    <p class="doa-translation">Ya Allah, berkahilah kami dalam rezeki yang Engkau berikan, dan lindungilah kami dari siksa neraka.</p>
+  </div>
+</body>
+</html>
